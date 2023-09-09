@@ -17,7 +17,7 @@ class ProductController extends Controller
         }
         return view($name);
     }
-    public function add_product(Request $request)
+    public function edit_cart(Request $request)
     {
         $id = $request->input('id');
         $quantity = $request->input('quantity');
@@ -31,6 +31,7 @@ class ProductController extends Controller
         $cart[$id] = $quantity;
         // 将更新后的购物车信息存储在 Cookie 中
         Cookie::queue('cart', json_encode($cart), 60);
-        return  view('add_success');
+        $view = $request->input('page');
+        return view($view);
     }
 }

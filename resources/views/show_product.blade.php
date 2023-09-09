@@ -30,10 +30,11 @@
                             echo $value['price'];
                         @endphp
                     </td>
-                    <form action="{{ route('add_success') }}" method="post">
+                    <form action="{{ route('edit_cart') }}" method="post">
                         @csrf
                         <input type="hidden" name="id"value="{{ $value['id'] }}">
-                        <td align="center"><input type="text" name="quantity"value="1"></td>
+                        <input type="hidden" name="page"value="add_success">
+                        <td align="center"><input type="text" name="quantity" value="1"></td>
                         <td align="center"><input type="submit" value="加入購物車"></td>
                     </form>
                 </tr>

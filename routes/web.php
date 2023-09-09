@@ -17,4 +17,4 @@ Route::get('index', function () {
     return view('index');
 });
 Route::get('page/{name?}', [ProductController::class, 'show'])->name('page.show');
-Route::post('add_success', [ProductController::class, 'add_product'])->name('add_success');
+Route::post('edit_cart', [ProductController::class, 'edit_cart'])->name('edit_cart');
